@@ -1,5 +1,5 @@
 ---
-title: Break the Syntax 2025 - Server Roulette
+title: Break the Syntax CTF 2025 - Server Roulette
 date: 2025-05-13
 categories: [CTF]
 tags: [CTF, crypto, hash, seed]
