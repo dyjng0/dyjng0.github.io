@@ -8,6 +8,7 @@ tags:
   - crypto
   - xor
   - seed
+math: true
 ---
 ## Source Code
 ```python
