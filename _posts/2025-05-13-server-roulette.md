@@ -4,7 +4,7 @@ date: 2025-05-13
 categories: [CTF]
 tags: [CTF, crypto, hash, seed]
 ---
-# Source Code
+## Source Code
 
 ```python
 from hashlib import sha256
@@ -109,7 +109,7 @@ if __name__ == "__main__":
 
 This code is hosted on a server that users connect to and input values.
 
-## Code Analysis
+### Code Analysis
 
 Let's try to understand what the code is doing. First, the program will generate a `server_seed` by taking the sha256 hash of `bytes(secrets.randbits(17))`, which generates a byte array of an empty number of bytes from $0$ to $2^{17}-1$. The server will then generate `server_seed_hash` by taking the sha256 hash of the server seed.
 
@@ -117,10 +117,10 @@ The code will print the server seed hash, then request a client seed and then ge
 
 The user inputs a bet on a number or color and the program compares it to the result calculated above. However, to find the flag, the user must input $13$ and get it right $37$ times in a row. If the user either bets incorrectly or bets correctly but doesn't bet $13$, the streak resets to $0$.
 
-# Approach
+## Approach
 
 Firstly, I noticed that there are only $2^{17}$ possible seeds, which is on the magnitude of $10^{5}$; sha256 is reproducible, meaning we can find the hash of each server seed, and more importantly, find a client seed for each server seed hash so that `hash_int % 37 == 13`.
-## Finding Client Seeds
+### Finding Client Seeds
 
 ```python
 from hashlib import sha256
@@ -160,7 +160,7 @@ After running the code, we are left with the following `json` file.
   ...
 }
 ```
-## Connecting to the Server
+### Connecting to the Server
 
 I could've just used the database of server seed hashes and manually went through $37$ rounds of server roulette to find the flag, but I'm lazy and wanted to try connecting to the server with `python` via `pwntools`.
 
@@ -214,7 +214,7 @@ The code first imports the `json` file, then after connecting to the server, the
 
 After $37$ rounds, the server should send the flag!
 
-# Final Result
+## Final Result
 
 After running both scripts, we get the following output.
 
