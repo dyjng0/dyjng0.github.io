@@ -6,6 +6,7 @@ categories:
 tags:
   - rev
   - CTF
+math: true
 ---
 
 This was a fun CTF, especially because I cleared all of the crypto challenges (granted they were all 50 points). However, I also ended up solving this rev challenge which was more involved than other easy rev challenges--I'm not too familiar with Ghidra, and this had me going through the binary itself to get the information I needed.
