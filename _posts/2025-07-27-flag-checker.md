@@ -141,8 +141,8 @@ Now that we got that out of the way, the issue lies in inputting values so that 
 
 {% raw %}
 <div style="display: flex; justify-content: center; gap: 20px;">
-  <img src="assets/flag-checker/test_pt.png" width="600">
-  <img src="assets/flag-checker/test_ct.png" width="600">
+  <img src="assets/flag-checker/test_pt.png" width="600" alt="test pt in binary">
+  <img src="assets/flag-checker/test_ct.png" width="600" alt="test ct in binary">
 </div>
 {% endraw %}
 
