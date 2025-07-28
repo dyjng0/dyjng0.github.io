@@ -1,5 +1,5 @@
 ---
-title: UIUCTF - Flag Checker
+title: UIUCTF 2025 - Flag Checker
 date: 2025-07-27
 categories:
   - CTF
