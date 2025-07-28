@@ -18,7 +18,7 @@ Generally, anytime we're given an executable, we can run `strings` to see if the
 
 After running `flag_checker` through Ghidra, we get the following main function.
 
-```C++
+```c
 undefined8 main(void)
 
 {
@@ -48,7 +48,7 @@ From a high level analysis, the code first gets the input via `get_input`, then 
 
 If we look closely at `get_input`, we can see exactly what happens when we run the executable.
 
-```C++
+```c
 void get_input(long param_1)
 
 {
@@ -74,7 +74,7 @@ Then, after all 8 values have been inputed, the second for loop goes through all
 
 This is where the meat of the rev challenge is. After the inputs have been stored in the array pointed at by `local_38`, the array is called by `check_input`.
 
-```C++
+```c
 undefined8 check_input(long param_1)
 
 {
@@ -105,7 +105,7 @@ Essentially, we need to ensure that the inputs we stored into `param_1`, which i
 
 We need to remember that `param_1` is `test_pt`, `param_2` is our input, and `param_3` is `0xffffff2f`.
 
-```C++
+```c
 ulong F(long param_1,ulong param_2,ulong param_3)
 
 {
@@ -148,7 +148,7 @@ Now that we got that out of the way, the issue lies in inputting values so that 
 
 Again, since there are 4 bytes per int in C, we get that
 
-```C++
+```c
 test_pt = [0x2265b1f5, 0x91b7584a, 0xd8f16adf, 0xcd613e30, 0xc386bbc4, 0x1027c4d1, 0x414c343c, 0x1e2feb89]
 test_ct = [0xdc44bf5e, 0x5aff1cec, 0xe1e9b4c2, 0x01329b92, 0x8f9ca92a, 0x0e45c5b4, 0x604a4b91, 0x7081eb59]
 ```
